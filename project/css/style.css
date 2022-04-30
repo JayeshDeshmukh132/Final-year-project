@@ -688,7 +688,77 @@ position: relative;
     padding:5px;
  }
 /* NEW LOGIN FOR USER ENDS  */
+.footer{
+    margin-top: 30px;
+    background: #fff;
+}
 
+.footer .box-container{
+ display: flex;
+ justify-content:center;
+ align-items: center;
+ width: 100%;
+}
+.footer .box-container .box{
+margin: 0 35px;
+}
+.footer .box-container .box .share a{
+    color: #2c2525;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.2s all ease;
+}
+.footer .box-container .box .share a:hover{
+    color: white;
+    background-color: #333;
+    transition: 0.2s all ease;
+}
+.footer .box-container .box p{
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+.footer .box-container .box h3{
+    font-size: 25px;
+    color:#333;
+    padding:10px 0;
+}
+
+.footer .box-container .box h3 i{
+    color:orange;
+}
+
+.footer .box-container .box .links{
+    display: block;
+    font-size: 20px;
+    color:#2c2525;
+    padding:10px 0;
+}
+
+.footer .box-container .box .links i{
+    transition: 0.2s all ease;
+    color:orange;
+    padding-right: 8px;
+}
+
+.footer .box-container .box .links:hover i{
+    padding-right: 20px;
+    transition: 0.2s all ease;
+}
+
+.footer .credit{
+    text-align: center;
+    margin-top: 20px;
+    padding:10px;
+    padding-top: 28px;
+    font-size: 25px;
+    color:#333;
+    border-top: 2px solid #333;
+}
+
+.footer .credit span{
+    color:orange;
+}
 /* Media query */
 
 @media (max-width: 1110px){
@@ -696,17 +766,6 @@ position: relative;
     .box1 .home .slide-container .slide{
         display: none;
     }
-    /* .box1 .home .slide-container{
-        margin-left: 6rem;
-        margin-top: 55px;
-    }
-    .box1 .home .slide-container .slide .h-image img{
-        height: 570px;
-        width: 555px;
-    }
-    .box1 .home .slide-container .slide .h-content h3{
-        font-size: 60px;
-    } */
     /* First section ends */
     
     /* Feature section */
@@ -818,13 +877,22 @@ position: relative;
         font-size: 10px;
     }
     /* Feature section ends */
-
+/* FOOTER STARTS */
+.footer .box-container {
+    flex-wrap: wrap;
+}
+.footer .box-container .box p{
+margin: 15px 5px;
+}
+/* FOOTER ENDS */
 }
 @media (max-width: 687px){
-    /* First section starts */
-    
-    
-    /* First section ends */
+    .footer .box-container #foot,#foot1,.box{
+        width: 100%;
+        text-align: center;
+        border-top: 2px solid #333;
+        margin-top: 10px;
+    }
 }
 @media (max-width: 525px){
     .search-box{
@@ -853,6 +921,7 @@ position: relative;
         padding: 4.5rem 20px;
         width: 70%;
     }
+ 
 
 }
 @media (max-width: 355px){

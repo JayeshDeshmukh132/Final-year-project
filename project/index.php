@@ -271,7 +271,43 @@ if(isset($_GET['logout'])){
 
     </section>
     <!-- Menu section ends -->
+    <section class="footer">
 
+<div class="box-container">
+
+    <div class="box">
+        <h3>wowFood<i class="fas fa-pizza-slice"></i> </h3>
+        <p>Our social media handles.</p>
+        <div class="share">
+            <a href="#"  class="fab fa-facebook-f"></a>
+            <a href="#"  class="fab fa-twitter"></a>
+            <a href="#"  class="fab fa-instagram"></a>
+            <a href="#"  class="fab fa-linkedin"></a>
+        </div>
+    </div>
+
+    <div class="box" id="foot">
+        <h3>Contact info</h3>
+        <a href="#" class="links"> <i class="fas fa-phone"></i> +123-456-7890 </a>
+        <a href="#" class="links"> <i class="fas fa-phone"></i> +111-222-3333 </a>
+        <a href="#" class="links"> <i class="fas fa-envelope"></i> deshmukhjayesh27@gmail.com </a>
+        <a href="#" class="links"> <i class="fas fa-map-marker-alt"></i> Thane-400601 </a>
+    </div>
+
+    <div class="box" id="foot1">
+        <h3>Quick links</h3>
+        <a href="#" class="links"> <i class="fas fa-arrow-right"></i> Home </a>
+        <a href="#features" class="links"> <i class="fas fa-arrow-right"></i> Features </a>
+        <a href="#menu" class="links"> <i class="fas fa-arrow-right"></i> Menu </a>
+        <a href="#" class="links"> <i class="fas fa-arrow-right"></i> review </a>
+    </div>
+
+
+</div>
+
+<div class="credit"> Created by <span> TYIF</span> | All rights reserved </div>
+
+</section>
     <script src="index.js"></script>
 </body>
 
