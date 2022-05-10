@@ -80,10 +80,10 @@ if(isset($_GET['logout'])){
 
         </div>
         <ul class="left-nav">
-            <li><a class="active" href="#box1">Home</a></li>
+            <li><a href="#box1">Home</a></li>
             <li><a href="#features">About us</a></li>
             <li><a href="#menu">Menu</a></li>
-            <li><a href="#contact">Contact us</a></li>
+            <li><a href="#review">Reviews</a></li>
             <a href="#" id="close"><i class="far fa-times"></i></a>
         </ul>
         <div class="icons">
@@ -92,24 +92,24 @@ if(isset($_GET['logout'])){
             $count_cart_items->execute([$user_id]);
             $total_cart_items = $count_cart_items->rowCount();
          ?>
-            <i id="search-btn" class="fa fa-search" aria-hidden="true"></i>
+            <!-- <i id="search-btn" class="fa fa-search" aria-hidden="true"></i> -->
             <i id="login" class="fa fa-user" aria-hidden="true"></i>
             <i id="order" class="fa fa-box" aria-hidden="true"></i>
             <i id="shop" class="fa fa-shopping-cart" aria-hidden="true"><span>(<?= $total_cart_items; ?>)</span></i>
         </div>
         <div class="mobile">
-            <i id="search-resp" class="fa fa-search" aria-hidden="true"></i>
+            <!-- <i id="search-resp" class="fa fa-search" aria-hidden="true"></i> -->
             <i id="login-resp" class="fa fa-user" aria-hidden="true"></i>
             <i id="order-resp" class="fa fa-box" aria-hidden="true"></i>
             <i id="shop-resp" class="fa fa-shopping-cart" aria-hidden="true"><span>(<?= $total_cart_items; ?>)</span></i>
             <i id="bars-resp" class="fa fa-bars" aria-hidden="true"></i>
         </div>
         <!-- SEARCH BOX STARTS -->
-        <form action="" method="post" class="search-box">
+        <!-- <form action="" method="post" class="search-box">
             <input type="text" class="search-bar" name="search" id="search" placeholder="Search here...">
             <button class="search-bar" id="submit-btn" type="submit"><i class="fas fa-search"
                     aria-hidden="true"></i></button>
-        </form>
+        </form> -->
         <!-- SEARCH BOX ENDS -->
          <!-- LOGIN FORM STARTS -->
        <form action="user_login.php" method="post" class="login-form">
@@ -174,6 +174,9 @@ if(isset($_GET['logout'])){
        <div class="shopping-cart">
            <div class="fas fa-times" id="shopping-close"></div>
         <?php
+        if($user_id==''){
+            echo '<script>alert("Please Login First!")</script>';
+        }else{}
          $grand_total = 0;
          $select_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
          $select_cart->execute([$user_id]);
@@ -271,18 +274,69 @@ if(isset($_GET['logout'])){
 
     </section>
     <!-- Menu section ends -->
+    <section class="review" id="review">
+
+    <h1 class="f-heading"> Customer's <span>Review</span> </h1>
+
+    
+
+        <div class="box-container">
+
+            <div class="box">
+                <img src="Images/person1.png" alt="">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde sunt fugiat dolore ipsum id est maxime ad tempore quasi tenetur.</p>
+                <h3>Siddhesh</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="Images/person2.png" alt="">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde sunt fugiat dolore ipsum id est maxime ad tempore quasi tenetur.</p>
+                <h3>Jayesh</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="Images/man.png" alt="">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde sunt fugiat dolore ipsum id est maxime ad tempore quasi tenetur.</p>
+                <h3>Manoday</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+
+       </div>
+ 
+</section>
+    <!-- Footer Starts -->
     <section class="footer">
-
-<div class="box-container">
-
-    <div class="box">
-        <h3>wowFood<i class="fas fa-pizza-slice"></i> </h3>
+        
+        <div class="box-container">
+            
+            <div class="box">
+                <h3>wowFood<i class="fas fa-pizza-slice"></i> </h3>
         <p>Our social media handles.</p>
         <div class="share">
-            <a href="#"  class="fab fa-facebook-f"></a>
-            <a href="#"  class="fab fa-twitter"></a>
-            <a href="#"  class="fab fa-instagram"></a>
-            <a href="#"  class="fab fa-linkedin"></a>
+            <a href="https://www.facebook.com/" target="_blank" class="fab fa-facebook-f"></a>
+            <a href="https://www.twitter.com/" target="_blank" class="fab fa-twitter"></a>
+            <a href="https://www.instagram.com/?hl=en" target="_blank"  class="fab fa-instagram"></a>
+            <a href="#"  class="fab fa-whatsapp"></a>
         </div>
     </div>
 
@@ -293,22 +347,23 @@ if(isset($_GET['logout'])){
         <a href="#" class="links"> <i class="fas fa-envelope"></i> deshmukhjayesh27@gmail.com </a>
         <a href="#" class="links"> <i class="fas fa-map-marker-alt"></i> Thane-400601 </a>
     </div>
-
+    
     <div class="box" id="foot1">
         <h3>Quick links</h3>
         <a href="#" class="links"> <i class="fas fa-arrow-right"></i> Home </a>
         <a href="#features" class="links"> <i class="fas fa-arrow-right"></i> Features </a>
         <a href="#menu" class="links"> <i class="fas fa-arrow-right"></i> Menu </a>
-        <a href="#" class="links"> <i class="fas fa-arrow-right"></i> review </a>
+        <a href="#review" class="links"> <i class="fas fa-arrow-right"></i> Review </a>
     </div>
-
-
+    
+    
 </div>
 
 <div class="credit"> Created by <span> TYIF</span> | All rights reserved </div>
 
 </section>
-    <script src="index.js"></script>
+<!-- Footer Ends -->
+<script src="index.js"></script>
 </body>
 
 </html>

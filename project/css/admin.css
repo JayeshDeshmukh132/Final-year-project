@@ -303,45 +303,49 @@ body{
     background-color: #f5f5f5;
     margin: 10px 0;
 }
-.show-products .box-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
- }
- 
- .show-products .box-container .box{
-    padding:20px;
-    text-transform: capitalize;
-    width: 350px;
-    text-align: center;
-    border-radius: 5px;
-    border:2px solid #333;
+
+.display-product-table table{
+    border: 2px solid #333;
     background-color: #fff;
-    box-shadow: var(--box-shadow);
-    position: relative;
+    text-transform: capitalize;
+    margin: 0 auto  ;
+    width: 70%;
+    text-align: center;
  }
- 
- .show-products .box-container .box img{
-    width: 100%;
- }
- 
- .show-products .box-container .box .price{
-    position: absolute;
-    top:2px; left:2px;
-    border-radius: 5px;
+.display-product-table table thead th{
+    
+    padding:15px;
+    font-size: 20px;
     background-color: #333;
-    color:#fff;
-    padding:5px 8px;
-    font-size: 18px;
- } 
- .show-products .box-container .box .name{
-    margin:10px 0;
-    font-size: 15px;
+    color: #fff;;
+ }
+ .display-product-table table td img{
+     height: 150px;
+ }
+ .display-product-table table td{
+    padding:15px;
+    font-size: 20px;
     color:#333;
  }
- .show-products .box-container .box .delete-btn:hover{
+ 
+ .display-product-table table td:first-child{
+    padding:0;
+ }
+ 
+ .display-product-table table tr:nth-child(even){
+    background-color: #49abeb;
+    
+ }
+ 
+ .display-product-table .empty{
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #eee;
+    color:#333;
+    font-size: 20px;
+    padding:15px;
+ }
+ .display-product-table table .delete-btn:hover{
      background-color: #333;
  }
 
@@ -376,6 +380,7 @@ body{
  }
  
 /* PRODUCT UPDATE ENDS*/
+
 /* ORDER SECTION STARTS */
 .orders{
     padding: 100px;

@@ -123,7 +123,7 @@ a{
     display: none;
 }
 /* css for search box starts */
-#input-search{
+/* #input-search{
     color: white;
 }
 .search-box{
@@ -165,7 +165,7 @@ a{
 }
 #search::placeholder{
     color: var(--text)
-}
+} */
 /* css for search box ends */
 /* css for cart  starts*/
 .shopping-cart{
@@ -187,6 +187,8 @@ a{
     transition: .3s linear;
 }
 .shopping-cart .box{
+    border: 2px solid #333;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     gap: 15px;
@@ -205,7 +207,7 @@ a{
 .shopping-cart .box .fa-trash{
     font-size: 22px;
     position: absolute;
-    top: 50%;
+    top: 45%;
     right: 0%;
     cursor: pointer;
     color: #937156d3;
@@ -606,8 +608,7 @@ position: relative;
 .menu .box-container .box form .qty:hover{
     border: 2px solid #3a281b;
 }
-
-/* Feature section starts */
+/* Menu section Ends */
 
 /* NEW LOGIN FOR USER STARTS  */
 .form-container{
@@ -687,6 +688,54 @@ position: relative;
     font-size: 20px;
     padding:5px;
  }
+ /* NEW LOGIN FOR USER ENDS  */
+ .review .box-container{
+     flex-wrap: wrap;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+.review .box-container .box{
+    width: 355px;
+    margin: 10px 15px;
+padding: 4rem 1rem;
+background-color: #fff;
+outline:.1rem solid rgba(0,0,0,.1) ;
+outline-offset: -1rem;
+text-align: center;
+box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+transition: all 0.3s ease-in-out;
+position: relative;
+}
+
+.review .box-container .box:hover{
+    outline-offset: 0rem;  
+    transition: all 0.2s ease-in-out;
+    outline: .1rem solid rgba(0,0,0,1);
+}
+
+.review .box-container .box img{
+    height:10rem;
+    width:10rem;
+    border-radius: 50%;
+}
+
+.review .box-container .box p{
+    margin: 5px 0;
+    line-height: 1.5;
+    color:#666;
+}
+
+.review .box-container .box h3{
+    padding-bottom: .5rem;
+    color:#333;
+    font-size: 2.2rem;
+}
+
+.review .box-container .box .stars i{
+    color:orange;
+    font-size: 1.7rem;
+}
 /* NEW LOGIN FOR USER ENDS  */
 .footer{
     margin-top: 30px;
@@ -904,6 +953,9 @@ margin: 15px 5px;
     /* First section starts */
 .shopping-cart{
     width: 330px;
+}
+.shopping-cart .box .fa-trash{
+    right: -3%;
 }
 .my-orders{
     width: 330px;

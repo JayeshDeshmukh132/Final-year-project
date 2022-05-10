@@ -22,7 +22,7 @@ if(isset($_GET['logout'])){
             <li><a href="index.php">Home</a></li>
             <li><a href="index.php">About us</a></li>
             <li><a href="index.php">Menu</a></li>
-            <li><a href="index.php">Contact us</a></li>
+            <li><a href="index.php">Reviews</a></li>
             <a href="#" id="close"><i class="far fa-times"></i></a>
         </ul>
         <div class="icons">
@@ -31,22 +31,22 @@ if(isset($_GET['logout'])){
             $count_cart_items->execute([$user_id]);
             $total_cart_items = $count_cart_items->rowCount();
          ?>
-            <i id="search-btn" class="fa fa-search" aria-hidden="true"></i>
+            <!-- <i id="search-btn" class="fa fa-search" aria-hidden="true"></i> -->
             <i id="login" class="fa fa-user" aria-hidden="true"></i>
            
         </div>
         <div class="mobile">
-            <i id="search-resp" class="fa fa-search" aria-hidden="true"></i>
+            <!-- <i id="search-resp" class="fa fa-search" aria-hidden="true"></i> -->
             <i id="login-resp" class="fa fa-user" aria-hidden="true"></i>
             
             <i id="bars-resp" class="fa fa-bars" aria-hidden="true"></i>
         </div>
   <!-- SEARCH BOX STARTS -->
-  <form action="" method="post" class="search-box">
+  <!-- <form action="" method="post" class="search-box">
             <input type="text" class="search-bar" name="search" id="search" placeholder="Search here...">
             <button class="search-bar" id="submit-btn" type="submit"><i class="fas fa-search"
                     aria-hidden="true"></i></button>
-        </form>
+        </form> -->
         <!-- SEARCH BOX ENDS -->
          <!-- LOGIN FORM STARTS -->
        <form action="user_login.php" method="post" class="login-form">
@@ -82,4 +82,5 @@ if(isset($_GET['logout'])){
         <!-- LOGIN FORM ENDS -->
         
     </nav>
+    
     <!-- NAVBAR SECTION ENDS -->

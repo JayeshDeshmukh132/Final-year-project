@@ -91,40 +91,45 @@ if(isset($_GET['delete'])){
    </form>
 
 </section>
+<section class="display-product-table">
+<h1 class="heading">added product</h1>
+   <table>
 
-<section class="show-products">
+      <thead>
+         <th>product image</th>
+         <th>product name</th>
+         <th>product price</th>
+         <th>action</th>
+      </thead>
 
-   <h1 class="heading">products added</h1>
-
-   <div class="box-container">
-
-   <?php
+      <tbody>
+      <?php
       $select_products = $conn->prepare("SELECT * FROM `products`");
       $select_products->execute();
       if($select_products->rowCount() > 0){
          while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){ 
    ?>
-   <div class="box">
-      <div class="price">₹<span><?= $fetch_products['price']; ?></span>/-</div>
-      <img src="../uploaded_img/<?= $fetch_products['image']; ?>" alt="">
-      <div class="name"><?= $fetch_products['name']; ?></div>
-      <div class="flex-btn">
-         <a href="admin_product_update.php?update=<?= $fetch_products['id']; ?>" class="option-btn">update</a>
-         <a href="admin_product.php?delete=<?= $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('delete this product?');">delete</a>
-      </div>
-   </div>
-   <?php
-         }
-      }else{
-         echo '<p class="box">no products added yet!</p>';
-      }
-   ?>
-   
-   </div>
+
+         <tr>
+            <td><img src="../uploaded_img/<?= $fetch_products['image']; ?>"  alt=""></td>
+            <td><?= $fetch_products['name']; ?></td>
+            <td>₹<?= $fetch_products['price']; ?>/-</td>
+            <td>
+               <a href="admin_product.php?delete=<?= $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('are your sure you want to delete this?');"> <i class="fas fa-trash"></i> delete </a>
+               <a href="admin_product_update.php?update=<?= $fetch_products['id']; ?>" class="option-btn"> <i class="fas fa-edit"></i> update </a>
+            </td>
+         </tr>
+
+         <?php
+            };    
+            }else{
+               echo "<div class='empty'>no product added</div>";
+            };
+         ?>
+      </tbody>
+   </table>
 
 </section>
-
-
    <script src="../index.js"></script>
    <script src="../admin/admin.js"></script>
 </body>
