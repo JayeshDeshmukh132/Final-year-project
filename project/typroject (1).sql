@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 30, 2022 at 01:29 PM
+-- Generation Time: May 10, 2022 at 09:21 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -61,7 +61,8 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`id`, `user_id`, `pid`, `name`, `price`, `quantity`, `image`) VALUES
-(4, 1, 9, 'Burger 3', 200, 2, 'b5.png');
+(6, 1, 4, 'Pizza 1', 250, 1, 'pizza-13.jpg'),
+(7, 1, 9, 'Burger 3', 200, 1, 'b5.png');
 
 -- --------------------------------------------------------
 
@@ -107,7 +108,6 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `price`, `image`) VALUES
-(3, 'Burger 1', 150, 'b3.png'),
 (4, 'Pizza 1', 250, 'pizza-13.jpg'),
 (5, 'Pizza 3', 210, 'p3.png'),
 (6, 'Burger 2', 120, 'b4.png'),
@@ -115,7 +115,8 @@ INSERT INTO `products` (`id`, `name`, `price`, `image`) VALUES
 (9, 'Burger 3', 200, 'b5.png'),
 (10, 'Momos 2', 100, 'm2.jpg'),
 (11, 'Pizza 4', 225, 'p4.png'),
-(12, 'Momo 3', 170, 'm1.jpg');
+(12, 'Momo 3', 170, 'm1.jpg'),
+(13, 'Burger 1', 210, 'b3.png');
 
 -- --------------------------------------------------------
 
@@ -135,7 +136,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `password`) VALUES
-(1, 'Jayesh', 'jd@gmail.com', '7b52009b64fd0a2a49e6d8a939753077792b0554');
+(1, 'Jayesh', 'jd@gmail.com', '7b52009b64fd0a2a49e6d8a939753077792b0554'),
+(2, 'Manoday', 'md@gmail.com', '240c4df7250227efd16ebedf6de99c5ab3b51698'),
+(3, 'Siddhesh ', 'siddhesh@gmail.com', '4452d71687b6bc2c9389c3349fdc17fbd73b833b'),
+(4, 'Shubham', 'Shubham@gmail.com', '16795633e2c1543064a3ad70ac3ba71d3d589b3b'),
+(5, 'Jayesh', 'dsad@gmail.com', 'ccb998d188704a2462b23b89ee593a5298b2925b');
 
 --
 -- Indexes for dumped tables
@@ -185,7 +190,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -197,13 +202,13 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
