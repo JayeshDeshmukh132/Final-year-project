@@ -92,25 +92,16 @@ if(isset($_GET['logout'])){
             $count_cart_items->execute([$user_id]);
             $total_cart_items = $count_cart_items->rowCount();
          ?>
-            <!-- <i id="search-btn" class="fa fa-search" aria-hidden="true"></i> -->
             <i id="login" class="fa fa-user" aria-hidden="true"></i>
             <i id="order" class="fa fa-box" aria-hidden="true"></i>
             <i id="shop" class="fa fa-shopping-cart" aria-hidden="true"><span>(<?= $total_cart_items; ?>)</span></i>
         </div>
         <div class="mobile">
-            <!-- <i id="search-resp" class="fa fa-search" aria-hidden="true"></i> -->
             <i id="login-resp" class="fa fa-user" aria-hidden="true"></i>
             <i id="order-resp" class="fa fa-box" aria-hidden="true"></i>
             <i id="shop-resp" class="fa fa-shopping-cart" aria-hidden="true"><span>(<?= $total_cart_items; ?>)</span></i>
             <i id="bars-resp" class="fa fa-bars" aria-hidden="true"></i>
         </div>
-        <!-- SEARCH BOX STARTS -->
-        <!-- <form action="" method="post" class="search-box">
-            <input type="text" class="search-bar" name="search" id="search" placeholder="Search here...">
-            <button class="search-bar" id="submit-btn" type="submit"><i class="fas fa-search"
-                    aria-hidden="true"></i></button>
-        </form> -->
-        <!-- SEARCH BOX ENDS -->
          <!-- LOGIN FORM STARTS -->
        <form action="user_login.php" method="post" class="login-form">
         <?php
@@ -174,9 +165,6 @@ if(isset($_GET['logout'])){
        <div class="shopping-cart">
            <div class="fas fa-times" id="shopping-close"></div>
         <?php
-        if($user_id==''){
-            echo '<script>alert("Please Login First!")</script>';
-        }else{}
          $grand_total = 0;
          $select_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
          $select_cart->execute([$user_id]);

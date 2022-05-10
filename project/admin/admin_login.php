@@ -57,21 +57,12 @@ if(isset($_POST['login'])){
             <a href="#" id="close"><i class="far fa-times"></i></a>
         </ul>
         <div class="icons">
-            <i id="search-btn" class="fa fa-search" aria-hidden="true"></i>
             <i id="login" class="fa fa-user" aria-hidden="true"></i>
         </div>
         <div class="mobile">
-            <i id="search-resp" class="fa fa-search" aria-hidden="true"></i>
             <i id="login-resp" class="fa fa-user" aria-hidden="true"></i>
             <i id="bars-resp" class="fa fa-bars" aria-hidden="true"></i>
         </div>
-         <!-- SEARCH BOX STARTS -->
-         <form action="" method="post" class="search-box">
-            <input type="text" class="search-bar" name="search" id="search" placeholder="Search here...">
-            <button class="search-bar" id="submit-btn" type="submit"><i class="fas fa-search"
-                    aria-hidden="true"></i></button>
-        </form>
-        <!-- SEARCH BOX ENDS -->
         </nav>
 
 <section class="admin-login">
