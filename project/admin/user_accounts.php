@@ -6,12 +6,7 @@ $admin_id =  $_SESSION['admin_id'];
 if(!isset($admin_id)){
 header('location:admin_login.php');
 }
-if(isset($_GET['delete'])){
-   $delete_id = $_GET['delete'];
-   $delete_order = $conn->prepare("DELETE FROM `user` WHERE id = ?");
-   $delete_order->execute([$delete_id]);
-   header('location:user_accounts.php');
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +41,7 @@ if(isset($_GET['delete'])){
    <p> user id : <span><?= $fetch_accounts['id']; ?></span> </p>
    <p> username : <span><?= $fetch_accounts['name']; ?></span> </p>
    <p> email : <span><?= $fetch_accounts['email']; ?></span> </p>
-   <a href="user_accounts.php?delete=<?= $fetch_accounts['id']; ?>" onclick="return confirm('delete this account?')" class="delete-btn">delete</a>
+   <!-- <a href="user_accounts.php?delete=<?= $fetch_accounts['id']; ?>" onclick="return confirm('delete this account?')" class="delete-btn">delete</a> -->
 </div>
 <?php
       }

@@ -1,11 +1,15 @@
-<?php 
+<?php
+
 include('../config.php');
+
 session_start();
-$admin_id =  $_SESSION['admin_id'];
+
+$admin_id = $_SESSION['admin_id'];
 
 if(!isset($admin_id)){
-header('location:admin_login.php');
+   header('location:admin_login.php');
 }
+
 if(isset($_POST['update_payment'])){
 
    $order_id = $_POST['order_id'];
@@ -13,7 +17,7 @@ if(isset($_POST['update_payment'])){
    $payment_status = filter_var($payment_status, FILTER_SANITIZE_STRING);
    $update_payment = $conn->prepare("UPDATE `orders` SET payment_status = ? WHERE id = ?");
    $update_payment->execute([$payment_status, $order_id]);
-   $message[] = 'payment status updated!';
+   $error[] = 'payment status updated!';
 
 }
 
@@ -25,6 +29,7 @@ if(isset($_GET['delete'])){
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,13 +44,21 @@ if(isset($_GET['delete'])){
    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
 
 <body>
-    <?php 
+
+<?php 
     include('../partials/admin_header.php');
     ?>
+
 <section class="orders">
 
 <h1 class="heading">placed orders</h1>
-
+   <?php
+   if(isset($error)){
+      foreach($error as $error){
+         echo '<span class="error-msg">'.$error.'</span>';
+     };
+   };
+   ?>
 <div class="box-container">
 
    <?php
@@ -53,9 +66,10 @@ if(isset($_GET['delete'])){
       $select_orders->execute();
       if($select_orders->rowCount() > 0){
          while($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)){
-   ?>
+            ?>
    <div class="box">
       <p> Placed on : <span><?= $fetch_orders['placed_on']; ?></span> </p>
+      <p> Time : <span><?= $fetch_orders['Time']; ?></span> </p>
       <p> Name : <span><?= $fetch_orders['name']; ?></span> </p>
       <p> Number : <span><?= $fetch_orders['number']; ?></span> </p>
       <p> Address : <span><?= $fetch_orders['address']; ?></span> </p>
@@ -66,8 +80,8 @@ if(isset($_GET['delete'])){
          <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
          <select name="payment_status" class="select">
             <option selected disabled><?= $fetch_orders['payment_status']; ?></option>
-            <option value="pending">pending</option>
-            <option value="completed">completed</option>
+            <option value="Pending">Pending</option>
+            <option value="Completed">Completed</option>
          </select>
         <div class="flex-btn">
          <input type="submit" value="update" class="option-btn" name="update_payment">
@@ -78,7 +92,7 @@ if(isset($_GET['delete'])){
    <?php
          }
       }else{
-         echo '<p class="box">No orders placed yet!</p>';
+         echo '<p class="empty">no orders placed yet!</p>';
       }
    ?>
 
@@ -87,7 +101,9 @@ if(isset($_GET['delete'])){
 </section>
 
 
-   <script src="../index.js"></script>
+
+<script src="../index.js"></script>
    <script src="../admin/admin.js"></script>
+
 </body>
 </html>

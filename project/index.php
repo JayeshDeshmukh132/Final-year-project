@@ -145,6 +145,7 @@ if(isset($_GET['logout'])){
       ?>
             <div class="box">
                 <p> <span>Placed On : </span><?= $fetch_orders['placed_on']; ?></p>
+                <p> <span>Time : </span><?= $fetch_orders['Time']; ?></p>
                 <p> <span> Name : </span><?= $fetch_orders['name']; ?></p>
                 <p> <span> Number :  </span><?= $fetch_orders['number']; ?></p>
                 <p> <span> Address : </span><?= $fetch_orders['address']; ?></p>

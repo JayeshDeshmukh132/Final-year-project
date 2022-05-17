@@ -41,23 +41,16 @@ if(isset($_GET['logout'])){
             
             <i id="bars-resp" class="fa fa-bars" aria-hidden="true"></i>
         </div>
-  <!-- SEARCH BOX STARTS -->
-  <!-- <form action="" method="post" class="search-box">
-            <input type="text" class="search-bar" name="search" id="search" placeholder="Search here...">
-            <button class="search-bar" id="submit-btn" type="submit"><i class="fas fa-search"
-                    aria-hidden="true"></i></button>
-        </form> -->
-        <!-- SEARCH BOX ENDS -->
+  
          <!-- LOGIN FORM STARTS -->
-       <form action="user_login.php" method="post" class="login-form">
+         <form action="user_login.php" method="post" class="login-form">
         <?php
             $select_user = $conn->prepare("SELECT * FROM `user` WHERE id = ?");
             $select_user->execute([$user_id]);
             if($select_user->rowCount() > 0){
                while($fetch_user = $select_user->fetch(PDO::FETCH_ASSOC)){
                   echo '<p class="error-msg">Welcome! <span>'.$fetch_user['name'].'</span></p>';
-                  echo '<a href="index.php?logout" name="out" class="btn">logout</a>';
-                 
+                  echo '<a href="index.php?logout" name="out" class="btn">logout</a>'; 
                }
             }else{
                echo '<p><span class="error-msg">You are not logged in now!</span></p>';
