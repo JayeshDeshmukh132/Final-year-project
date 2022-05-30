@@ -26,16 +26,19 @@ if(isset($_POST['order'])){
       $select_cart->execute([$user_id]);
 
       if($select_cart->rowCount() > 0){
+         if($number>10 or $number<10){
+            echo '<script>alert("Invalid Phone Number (less than or more than 10 numbers)!")</script>';
+         }else{
          $insert_order = $conn->prepare("INSERT INTO `orders`(user_id, name, number, method, address, total_products, total_price) VALUES(?,?,?,?,?,?,?)");
          $insert_order->execute([$user_id, $name, $number, $method, $address, $total_products, $total_price]);
          $delete_cart = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
          $delete_cart->execute([$user_id]);
-         echo '<script>alert("Order placed successfully!")</script>';
+         echo '<script>alert("Order placed successfully!")</script>';}
       }else{
          echo '<script>alert("Your cart is empty!")</script>';
       }
    }
-
+   
 }
 
 ?>
